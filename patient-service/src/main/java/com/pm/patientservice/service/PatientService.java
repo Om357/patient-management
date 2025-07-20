@@ -30,7 +30,7 @@ public class PatientService {
     }
 
     public PatientResponseDTO createPatient (PatientRequestDTO patientRequestDTO){
-        //Checking the Email is not already exist in DB or used any other User(patient)
+        //Checking the Email is not already exist in DB or used by any other User(patient) for updating it with new one.
         if(patientRepository.existsByEmail(patientRequestDTO.getEmail())){
             throw new EmailAlreadyExistException("A patient with this email " + "already exists {" +
                     patientRequestDTO.getEmail() + " }");
@@ -49,7 +49,7 @@ public class PatientService {
                 "Patient not found with ID : " + id));
 
         //Checking Email  in the database exist or not
-        if(patientRepository.existsByEmail(patientRequestDTO.getEmail())){
+        if(patientRepository.existsByEmailAndIdNot(patientRequestDTO.getEmail(),id)){
             throw new EmailAlreadyExistException("A patient with this email " + "already exists {" +
                     patientRequestDTO.getEmail() + " }");
         }
@@ -62,6 +62,10 @@ public class PatientService {
         Patient updatedPatient = patientRepository.save(patient);
 
         return PatientMapper.toDTO(updatedPatient);
+    }
+
+    public void deletePatient(UUID id){
+        patientRepository.deleteById(id);
     }
 
 }
