@@ -9,5 +9,9 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:3.5.3" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:3.5.3" level="project" />
+    <orderEntry type="module" module-name="billing-service" />
+    <orderEntry type="library" name="Maven: io.grpc:grpc-stub:1.69.0" level="project" />
+    <orderEntry type="library" name="Maven: net.devh:grpc-server-spring-boot-starter:3.1.0.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.slf4j:slf4j-api:2.0.17" level="project" />
   </component>
 </module>

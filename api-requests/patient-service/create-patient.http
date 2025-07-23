@@ -3,9 +3,9 @@ POST http://localhost:4000/patients
 Content-Type: application/json
 
 {
-  "name": "John Domic",
-  "email": "test@example.com",
-  "address": "123 older street",
+  "name": "John DomicCIS for KAFKA",
+  "email": "test_for_kafka@example.com",
+  "address": "123 older street431",
   "dateOfBirth": "1990-10-29",
   "registeredDate": "2024-11-17"
 }
